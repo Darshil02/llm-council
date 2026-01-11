@@ -5,29 +5,46 @@ from .openrouter import query_models_parallel, query_model
 from .config import COUNCIL_MODELS, CHAIRMAN_MODEL
 
 
-async def stage1_collect_responses(user_query: str) -> List[Dict[str, Any]]:
+
+async def stage1_collect_responses(user_message: str) -> List[Dict[str, Any]]:
     """
-    Stage 1: Collect individual responses from all council models.
+    Stage 1: call each council member model and return structured results.
 
-    Args:
-        user_query: The user's question
-
-    Returns:
-        List of dicts with 'model' and 'response' keys
+    Each item looks like:
+    {
+        "model": str,
+        "response": str,
+        "time_ms": int | None,
+        "status": "success" | "error" | None,
+        "error": str | None,
+    }
     """
-    messages = [{"role": "user", "content": user_query}]
+    messages = [
+        {"role": "user", "content": user_message}
+    ]
 
-    # Query all models in parallel
-    responses = await query_models_parallel(COUNCIL_MODELS, messages)
+    # Call all models (local / OpenRouter) in parallel
+    results = await query_models_parallel(COUNCIL_MODELS, messages)
 
-    # Format results
-    stage1_results = []
-    for model, response in responses.items():
-        if response is not None:  # Only include successful responses
+    stage1_results: List[Dict[str, Any]] = []
+    for model_name, res in results.items():
+        if not res:
             stage1_results.append({
-                "model": model,
-                "response": response.get('content', '')
+                "model": model_name,
+                "response": "",
+                "time_ms": None,
+                "status": "error",
+                "error": "No response from model",
             })
+            continue
+
+        stage1_results.append({
+            "model": model_name,
+            "response": res.get("content", "") or "",
+            "time_ms": res.get("time_ms"),
+            "status": res.get("status", "success"),
+            "error": res.get("error"),
+        })
 
     return stage1_results
 

@@ -1,153 +1,127 @@
-.stage2 {
-  background: #fafafa;
+.stage.stage2 {
+  margin-top: 0.9rem;
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;
+  background: #020617;
+  border: 1px solid #1f2937;
+}
+
+.stage2 .stage-title {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.35rem;
 }
 
 .stage2 h4 {
-  margin: 20px 0 8px 0;
-  color: #333;
-  font-size: 14px;
+  font-size: 0.85rem;
+  margin: 0.3rem 0;
+}
+
+.stage2 .stage-description {
+  font-size: 0.78rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+/* Tabs for evaluators */
+
+.stage2 .tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.stage2 .tab {
+  border-radius: 999px;
+  padding: 0.23rem 0.7rem;
+  font-size: 0.78rem;
+  border: 1px solid #1f2937;
+  background: #020617;
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+.stage2 .tab.active {
+  background: #e5e7eb;
+  color: #020617;
   font-weight: 600;
 }
 
-.stage2 h4:first-of-type {
-  margin-top: 0;
+/* Ranking panel */
+
+.stage2 .tab-content {
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.75rem;
+  background: #020617;
+  border: 1px solid #1f2937;
 }
 
-.stage-description {
-  margin: 0 0 12px 0;
-  color: #666;
-  font-size: 13px;
+.ranking-model {
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-bottom: 0.3rem;
+}
+
+.ranking-content {
+  font-size: 0.86rem;
   line-height: 1.5;
 }
 
+/* Extracted ranking */
+
+.parsed-ranking {
+  margin-top: 0.55rem;
+  font-size: 0.82rem;
+}
+
+.parsed-ranking ol {
+  margin: 0.25rem 0 0 1rem;
+}
+
+/* Aggregate rankings */
+
 .aggregate-rankings {
-  background: #f0f7ff;
-  padding: 16px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  border: 2px solid #d0e7ff;
+  margin-top: 0.75rem;
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.7rem;
+  background: radial-gradient(circle at top left, #0f172a 0, #020617 70%);
+  border: 1px solid #1f2937;
 }
 
 .aggregate-rankings h4 {
-  margin: 0 0 12px 0;
-  color: #2a7ae2;
-  font-size: 15px;
+  margin-bottom: 0.3rem;
 }
 
 .aggregate-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.35rem;
 }
 
 .aggregate-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px;
-  background: #ffffff;
-  border-radius: 6px;
-  border: 1px solid #d0e7ff;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 0.4rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.5rem;
+  background: rgba(15, 23, 42, 0.7);
 }
 
 .rank-position {
-  color: #2a7ae2;
   font-weight: 700;
-  font-size: 16px;
-  min-width: 35px;
+  color: #22c55e;
 }
 
 .rank-model {
-  flex: 1;
-  color: #333;
-  font-family: monospace;
-  font-size: 14px;
   font-weight: 500;
 }
 
-.rank-score {
-  color: #666;
-  font-size: 13px;
-  font-family: monospace;
-}
-
-.stage2 .tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-}
-
-.stage2 .tab {
-  padding: 8px 16px;
-  background: #ffffff;
-  border: 1px solid #d0d0d0;
-  border-radius: 6px 6px 0 0;
-  color: #666;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.2s;
-}
-
-.stage2 .tab:hover {
-  background: #f0f0f0;
-  color: #333;
-  border-color: #4a90e2;
-}
-
-.stage2 .tab.active {
-  background: #ffffff;
-  color: #4a90e2;
-  border-color: #4a90e2;
-  border-bottom-color: #ffffff;
-  font-weight: 600;
-}
-
-.stage2 .tab-content {
-  background: #ffffff;
-  padding: 16px;
-  border-radius: 6px;
-  border: 1px solid #e0e0e0;
-  margin-bottom: 20px;
-}
-
-.ranking-model {
-  color: #888;
-  font-size: 12px;
-  font-family: monospace;
-  margin-bottom: 12px;
-}
-
-.ranking-content {
-  color: #333;
-  line-height: 1.6;
-  font-size: 14px;
-}
-
-.parsed-ranking {
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 2px solid #e0e0e0;
-}
-
-.parsed-ranking strong {
-  color: #2a7ae2;
-  font-size: 13px;
-}
-
-.parsed-ranking ol {
-  margin: 8px 0 0 0;
-  padding-left: 24px;
-  color: #333;
-}
-
-.parsed-ranking li {
-  margin: 4px 0;
-  font-family: monospace;
-  font-size: 13px;
-}
-
+.rank-score,
 .rank-count {
-  color: #999;
-  font-size: 12px;
+  font-size: 0.78rem;
+  opacity: 0.8;
 }

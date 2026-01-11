@@ -1,5 +1,6 @@
-# Python-generated files
+w# Python-generated files
 __pycache__/
+*.pyc
 *.py[oc]
 build/
 dist/
@@ -14,8 +15,14 @@ wheels/
 
 # Data files
 data/
+data/conversations/
 
 # Frontend
 frontend/node_modules/
 frontend/dist/
 frontend/.vite/
+
+# Frontend
+node_modules/
+dist/
+.vite/

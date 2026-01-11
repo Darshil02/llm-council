@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import './Stage2.css';
 
 function deAnonymizeText(text, labelToModel) {
-  if (!labelToModel) return text;
+  if (!labelToModel || !text) return text;
 
   let result = text;
   // Replace each "Response X" with the actual model name
@@ -27,8 +27,9 @@ export default function Stage2({ rankings, labelToModel, aggregateRankings }) {
 
       <h4>Raw Evaluations</h4>
       <p className="stage-description">
-        Each model evaluated all responses (anonymized as Response A, B, C, etc.) and provided rankings.
-        Below, model names are shown in <strong>bold</strong> for readability, but the original evaluation used anonymous labels.
+        Each model evaluated all responses (anonymized as Response A, B, C, etc.) and provided
+        rankings. Below, model names are shown in <strong>bold</strong> for readability, but the
+        original evaluation used anonymous labels.
       </p>
 
       <div className="tabs">
