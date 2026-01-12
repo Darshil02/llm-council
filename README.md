@@ -56,30 +56,35 @@ a single final response.
 
 #### Backend (uv)
 ```bash
-uv sync
+uv sync```
+
 Frontend (npm)
 
 ```bash
 cd frontend
 npm install
 cd ..
+```
 
-## 2. Start Ollama & Download Models
+2. Start Ollama & Download Models
 Install Ollama:
 
 ```arduino
 https://ollama.com
+```
 Pull models:
-
 ```bash
 ollama pull llama3
 ollama pull mistral
 ollama pull qwen2
-Start the Ollama server:
+```
 
+Start the Ollama server:
 ```bash
 ollama serve
-3. Configure Models (Optional)
+```
+
+### 3. Configure Models (Optional)
 Edit backend/config.py:
 
 ```python
@@ -90,27 +95,32 @@ COUNCIL_MODELS = [
 ]
 
 CHAIRMAN_MODEL = "llama3"
-Running the Application
+```
+
+### Running the Application
 Option 1 - Use the start script
 
 ```bash
 ./start.sh
+```
 
 Option 2 - Run manually
 Terminal 1 (Backend)
 
 ```bash
 uv run python -m backend.main
-Terminal 2 (Frontend)
+```
 
+Terminal 2 (Frontend)
 ```bash
 cd frontend
 npm run dev
+```
 Open in your browser:
 
 ```arduino
 http://localhost:5173
-
+```
 
 ## Attribution
 
