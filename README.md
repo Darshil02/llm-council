@@ -110,3 +110,18 @@ Open in your browser:
 
 ```arduino
 http://localhost:5173
+
+
+## Attribution
+
+This project is based on the original LLM Council concept by Andrej Karpathy.
+The core architecture was extended, modified, and significantly expanded by Darshil Ambaliya, including:
+
+- Streaming multi-stage evaluation UI
+- Model-to-model peer ranking logic
+- Error handling and reliability tracking
+- Frontend redesign and visualization
+- Local Ollama integration
+- Full documentation and screenshots
+
+This repository represents an independent extension and evolution of the original idea.
